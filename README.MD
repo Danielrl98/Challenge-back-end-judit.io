@@ -117,7 +117,7 @@ fastify,dotenv,mongoose
 
 ## Consulta de Erros
 
-### 1: connect db error
+### 1: connect db error 
 ### 900: unknown error response
 ### 950:not found cnj
 ### 951: request_id not exists
