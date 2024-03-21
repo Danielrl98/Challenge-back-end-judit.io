@@ -1,34 +1,32 @@
 require("dotenv").config();
 
 export const responseApi = {
-    async submit(id:String){
-    console.log(id)
-      const baseurl = `https://requests.prod.judit.io/responses`;
+  async submit(id: String) {
 
-      const headers = {
-        "Content-Type": "application/json",
-        "api-key": process.env.API_KEY,
-      };
-     
-      const config = {
-        method: "GET",
-        headers: headers,
-        request_id: id,
-      };
-     return this.send(baseurl,config)
-    },
-    async send(baseurl: string, config: object) {
-        const response: any = [];
+    const response:any = []
+
+    const baseurl = `https://requests.prod.judit.io/responses`;
+
+    const headers:object = {
+      "Content-Type": "application/json",
+      "api-key": process.env.API_KEY,
+    };
+
+    const config:object = {
+      method: "GET",
+      headers: headers,
+      request_id: id,
+    };
+
+    try {
+      await fetch(baseurl, config).then(async (e) => {
+        const result = await e.json();
+        response.push(result);
+      });
+    } catch (error) {
+        throw new Error("900: unknown error response: " + error);
+    }
     
-        try {
-          await fetch(baseurl, config).then(async (e) => {
-            const result = await e.json();
-            response.push(result);
-          });
-        } catch (error) {
-          throw new Error("unknown error: " + error);
-        }
-        return response;
-      },
-    
-}
+    return response;
+  },
+};

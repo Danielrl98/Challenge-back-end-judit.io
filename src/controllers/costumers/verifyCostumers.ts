@@ -1,12 +1,11 @@
 import CostumersModel from "../../models/costumers/costumersModel";
 import { createCostumer } from "./createCostumers";
 
-export const selectCostumers = {
+export const verifyCostumers = {
   async select(name: string, cpf: string) {
     const response: any = [];
 
     try {
-        
       const costumer = await CostumersModel.findOne({ cpf: cpf });
 
       if (costumer) {

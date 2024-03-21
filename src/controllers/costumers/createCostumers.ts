@@ -17,10 +17,10 @@ export const createCostumer = {
             response.push(e)
         })
         .catch((error) => {
-          throw new Error("Erro ao cadastrar cliente: " + error);
+          throw new Error("952: client register error: " + error);
         });
     } catch (error) {
-      throw new Error("Erro ao cadastrar cliente: " + error);
+      throw new Error("953: client register error: " + error);
     } 
  
     return response

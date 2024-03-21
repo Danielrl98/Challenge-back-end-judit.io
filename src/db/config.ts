@@ -6,9 +6,9 @@ try {
   
   mongoose.connect(process.env.DATABASE_URL)
   .then(() => {
-    console.log("banco de dados conectado")
+    console.log("connect db success")
   })
 
 } catch (error) {
-    throw new Error("Erro ao conectar ao banco de dados");
+    throw new Error("1: connect db error");
 }
