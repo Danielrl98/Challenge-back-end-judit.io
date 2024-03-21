@@ -8,7 +8,9 @@ Você precisará ter o GIT instalado na sua máquina, e, após isso, clonar este
 ```sh
   $ git clone https://github.com/Danielrl98/Challenge-back-end-judit.io.git
 ```
-
+```sh
+  $ cd Challenge-back-end-judit.io
+```
 Você precisará ter o Docker e Docker compose na sua máquina, após isso, executar o comando na pasta raiz do projeto
 ```sh
   $ sudo docker build --no-cache -t dockerlogin .
