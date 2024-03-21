@@ -35,7 +35,7 @@ REQUISIÇÃO POST
 
 A requisição /request é responsável por trazer os processos judiciais para o usuário ao final, ao mesmo momento faz o cadastro interno no lead e recupera na API seu estado inicial ( backlog ), junto as informações de nome, cpf e data de cadastro
 
-corpo: 
+Corpo: 
 ```shell
 {
     "cpf": string,
@@ -44,12 +44,58 @@ corpo:
 }
 ```
 
+## Rota de Alteração de Lista
+
+REQUISIÇÃO POST
+```sh
+/costumers/list/edit
+```
+A requisição /costumers/list/edit é responsável por alterar o processo de lista do lead. Cada ID é responsável por um processo de lista. 
+
+Exemplos:
+```shell
+0: backlog
+1: discover
+2: lead
+3: deal
+4: archived
+```
+
+Corpo:
+```shell
+{
+    "id": number,
+    "cpf": string
+}
+```
+
+## Rota de consulta de Leads
+
+REQUISIÇÃO POST
+```sh
+/costumers/list/
+```
+A requisição /costumers/list/ é responsável por trazer os leads cadastrados por processo de lista. Campo ID é necessário para trazer o processo de lista dos usuários
+
+Exemplos:
+```shell
+0: backlog
+1: discover
+2: lead
+3: deal
+4: archived
+```
+
+Corpo:
+```shell
+{
+    id: number
+}
+```
 
 ## Bibliotecas usadas
 
-fastify: ^4.26.2
-dotenv: ^16.4.5
-mongoose: "^8.2.2
+fastify,dotenv,mongoose
 
 ## Estrutura de pastas src/
 
