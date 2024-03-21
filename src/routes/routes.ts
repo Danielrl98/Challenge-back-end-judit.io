@@ -4,13 +4,14 @@ import {
   FastifyRequest,
   FastifyReply,
 } from "fastify";
-import { Create_costumersServices } from '../services/costumers/createCostumersServices'
+import { searchApi } from "../api/judit/search";
+import { createList } from '../controllers/list/createList'
 
 export async function routes(
   fastify: FastifyInstance,
   options: FastifyPluginOptions
 ) {
-  fastify.post("/", async (request: FastifyRequest, reply: FastifyReply) => {
-    return Create_costumersServices.execute(request,reply);
+  fastify.post("/", { preHandler: createList.create },async (request: FastifyRequest, reply: FastifyReply) => {
+      return searchApi.submit(request, reply)
   });
 }

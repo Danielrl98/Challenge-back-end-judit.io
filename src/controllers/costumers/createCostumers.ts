@@ -1,23 +1,20 @@
 import CostumersModel from "../../models/costumers/costumersModel";
-import { CostumersProps } from "../../models/costumers/costumersProps.interface";
 
-export const create_costumer = {
+export const createCostumer = {
 
-  async Create_costumers(cpf:string,list:string) {
+  async createCostumers(name:string, cpf:string) {
 
-    const response:CostumersProps = {}
+    const response:any = []
        
     try {
       await new CostumersModel({
+        name: name,
         cpf: cpf,
-        list: list,
+        list: 0,
       })
         .save()
         .then(( e ) => {
-            response.cpf = e.cpf
-            response.list= e.list
-            response.id = e._id 
-
+            response.push(e)
         })
         .catch((error) => {
           throw new Error("Erro ao cadastrar cliente: " + error);
@@ -25,6 +22,7 @@ export const create_costumer = {
     } catch (error) {
       throw new Error("Erro ao cadastrar cliente: " + error);
     } 
+ 
     return response
   },
 };

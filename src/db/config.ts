@@ -2,12 +2,13 @@ import mongoose from "mongoose";
 
 require('dotenv').config()
 
-const database:string | undefined = process.env.DATABASE_URL
-
-mongoose.connect(database)
+try {
+  
+  mongoose.connect(process.env.DATABASE_URL)
   .then(() => {
     console.log("banco de dados conectado")
   })
-  .catch((e) => {
+
+} catch (error) {
     throw new Error("Erro ao conectar ao banco de dados");
-});
+}
