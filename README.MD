@@ -117,24 +117,24 @@ fastify,dotenv,mongoose
 
 ## Consulta de Erros
 
-1: connect db error
-900: unknown error response
-950:not found cnj
-951: request_id not exists
-952: client register error
-953: client register error
-1008: error consult list data list
-1009: error consult list costumers
-1010: error consult list data list
-1020: unknown errors services
-1021: invalid field name
-1022: invalid field cpf
-1023: invalid field cnj
-1030: error consult list costumer list
-1034: list cannot return to backlog
-1035: list not exists
-1040: list costumers not exists
-1041: list not exists
+### 1: connect db error
+### 900: unknown error response
+### 950:not found cnj
+### 951: request_id not exists
+### 952: client register error
+### 953: client register error
+### 1008: error consult list data list
+### 1009: error consult list costumers
+### 1010: error consult list data list
+### 1020: unknown errors services
+### 1021: invalid field name
+### 1022: invalid field cpf
+### 1023: invalid field cnj
+### 1030: error consult list costumer list
+### 1034: list cannot return to backlog
+### 1035: list not exists
+### 1040: list costumers not exists
+### 1041: list not exists
 
 Challengy by recruitment backend
 
