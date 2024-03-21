@@ -22,7 +22,7 @@ Acesso roteado para http://localhost:3000
 Será necessário renomear o arquivo .env_copy para .env na raiz do projeto.
 
 DATABASE_URL: variável responsável pelo acesso ao mongodb. 
-exemplo: mongodb+srv://userhere:passwordhere1@nameprojecthre
+exemplo padrão do docker compose: mongodb://root:example@mongo:27017/    
 
 API_KEY: Chave api para buscar os projetos judiciais, doc: https://docs.judit.io
 
