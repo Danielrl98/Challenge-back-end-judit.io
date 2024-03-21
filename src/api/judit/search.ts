@@ -48,7 +48,8 @@ export const searchApi = {
       /*encontra os processos */
       const finalSubmit = await responseApi.submit(resultRequest[0].request_id)
       
-     reply.send(finalSubmit);
+      const result = finalSubmit[0].page_data[0].response_data
+      reply.send(result);
 
     } catch (error: any) {
       throw new Error(error);
